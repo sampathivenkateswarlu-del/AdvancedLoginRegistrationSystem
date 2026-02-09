@@ -1,20 +1,14 @@
-<%@ page import="com.model.Admin" %>
+<%@ page import="com.model.User" %>
 <%
-    Admin admin = (Admin) session.getAttribute("ADMIN");
-    if (admin == null) {
-        response.sendRedirect(request.getContextPath() + "/admin/adminlogin.jsp");
-        return;
+    User user = (User) session.getAttribute("loggedUser");
+
+    if (user != null) {
+        if ("ADMIN".equals(user.getRole())) {
+            response.sendRedirect(request.getContextPath() + "/admin/admindashboard.jsp");
+        } else {
+            response.sendRedirect(request.getContextPath() + "/user/dashboard.jsp");
+        }
+    } else {
+        response.sendRedirect(request.getContextPath() + "/login.jsp");
     }
 %>
-
-<html>
-<head><title>Admin Dashboard</title></head>
-<body>
-
-<h2>Welcome Admin: <%= admin.getUsername() %></h2>
-Role: <%= admin.getRole() %><br><br>
-
-<a href="<%= request.getContextPath() %>/admin/logout">Logout</a>
-
-</body>
-</html>

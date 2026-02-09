@@ -33,19 +33,19 @@ public class ForgetPasswordServlet extends HttpServlet {
 
         if (email.isEmpty() || otp.isEmpty() || password.isEmpty() || confirm.isEmpty()) {
             request.setAttribute("error", "All fields are mandatory");
-            request.getRequestDispatcher("/user/forgetpassword.jsp").forward(request, response);
+            request.getRequestDispatcher("/user/forgotpassword.jsp").forward(request, response);
             return;
         }
 
         if (!password.equals(confirm)) {
             request.setAttribute("error", "Passwords do not match");
-            request.getRequestDispatcher("/user/forgetpassword.jsp").forward(request, response);
+            request.getRequestDispatcher("/user/forgotpassword.jsp").forward(request, response);
             return;
         }
 
         if (!otpService.verifyOTP(email, otp)) {
             request.setAttribute("error", "Invalid or expired OTP");
-            request.getRequestDispatcher("/user/forgetpassword.jsp").forward(request, response);
+            request.getRequestDispatcher("/user/forgotpassword.jsp").forward(request, response);
             return;
         }
 

@@ -25,13 +25,13 @@ public class VerifyForgotOTPServlet extends HttpServlet {
         if (!otpService.verifyOTP(email, otp)) {
             request.setAttribute("error", "Invalid OTP");
             request.setAttribute("step", "OTP");
-            request.getRequestDispatcher("/user/forgetpassword.jsp").forward(request, response);
+            request.getRequestDispatcher("/user/forgotpassword.jsp").forward(request, response);
             return;
         }
 
         request.getSession().setAttribute("VERIFIED_OTP", otp);
         request.setAttribute("step", "RESET");
 
-        request.getRequestDispatcher("/user/forgetpassword.jsp").forward(request, response);
+        request.getRequestDispatcher("/user/forgotpassword.jsp").forward(request, response);
     }
 }

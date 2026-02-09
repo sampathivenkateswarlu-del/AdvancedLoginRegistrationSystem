@@ -25,7 +25,7 @@
 </form>
 
 <p>
-    <a href="<%= request.getContextPath() %>/user/forgetpassword.jsp">Forgot Password?</a>
+    <a href="<%= request.getContextPath() %>/user/forgotpassword.jsp">Forgot Password?</a>
 </p>
 
 <p>

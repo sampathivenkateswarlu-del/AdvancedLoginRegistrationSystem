@@ -27,7 +27,7 @@ public class SendForgotOTPServlet extends HttpServlet {
         session.setAttribute("RESET_EMAIL", email);
         request.setAttribute("step", "OTP");
 
-        request.getRequestDispatcher("/user/forgetpassword.jsp").forward(request, response);
+        request.getRequestDispatcher("/user/forgotpassword.jsp").forward(request, response);
     }
 }
 
