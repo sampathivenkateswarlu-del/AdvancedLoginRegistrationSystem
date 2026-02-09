@@ -13,7 +13,7 @@
     <script>
         let remainingSeconds = <%= 
             (session.getAttribute("OTP_EXPIRY") != null)
-            ? ((Long) session.getAttribute("OTP_EXPIRY") - System.currentTimeMillis()) / 1000
+            ? Math.max(0, (((Long) session.getAttribute("OTP_EXPIRY") - System.currentTimeMillis()) / 1000))
             : 0
         %>;
 
