@@ -154,5 +154,21 @@ public class UserDAO {
 
         return list;
     }
+    
+    public void deleteUserById(int id) {
+
+        String sql = "DELETE FROM users WHERE id = ?";
+
+        try (Connection con = DBConnection.getConnection();
+             PreparedStatement ps = con.prepareStatement(sql)) {
+
+            ps.setInt(1, id);
+            ps.executeUpdate();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 
 }

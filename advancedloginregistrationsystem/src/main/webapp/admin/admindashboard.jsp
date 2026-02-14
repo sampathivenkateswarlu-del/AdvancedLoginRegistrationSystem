@@ -26,7 +26,7 @@
 <hr>
 
 <a href="<%= request.getContextPath() %>/all-users">All Users</a> |
-<a href="<%= request.getContextPath() %>/logout">Logout</a>
+<a href="<%= request.getContextPath() %>/admin/logout">Logout</a>
 
 </body>
 </html>

@@ -31,6 +31,7 @@
         <th>Email</th>
         <th>Mobile</th>
         <th>Role</th>
+        <th>Action</th>
     </tr>
 
     <%
@@ -42,6 +43,12 @@
         <td><%= u.getEmail() %></td>
         <td><%= u.getMobileNumber() %></td>
         <td><%= u.getRole() %></td>
+        <td>
+    		<a href="<%= request.getContextPath() %>/delete-user?id=<%= u.getId() %>"
+       			onclick="return confirm('Are you sure you want to delete this user?');">
+       			Delete
+    		</a>
+		</td>
     </tr>
     <%
         }
