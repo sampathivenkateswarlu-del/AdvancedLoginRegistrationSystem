@@ -34,10 +34,10 @@ public class RegisterServlet extends HttpServlet {
 
         if ("SUCCESS".equals(result)) {
             request.setAttribute("success", "Registration successful. Please login.");
-            request.getRequestDispatcher("login.jsp").forward(request, response);
+            request.getRequestDispatcher("/user/login.jsp").forward(request, response);
         } else {
             request.setAttribute("error", result);
-            request.getRequestDispatcher("register.jsp").forward(request, response);
+            request.getRequestDispatcher("/user/register.jsp").forward(request, response);
         }
     }
 }
