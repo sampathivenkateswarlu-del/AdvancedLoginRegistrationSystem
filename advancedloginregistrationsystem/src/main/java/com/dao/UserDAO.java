@@ -5,6 +5,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.model.User;
 import com.utility.DBConnection;
@@ -123,4 +125,34 @@ public class UserDAO {
             return false;
         }
     }
+    
+    public List<User> getAllUsers() {
+
+        List<User> list = new ArrayList<>();
+
+        String sql = "SELECT * FROM users";
+
+        try (Connection con = DBConnection.getConnection();
+             PreparedStatement ps = con.prepareStatement(sql);
+             ResultSet rs = ps.executeQuery()) {
+
+            while (rs.next()) {
+                User user = new User();
+
+                user.setId(rs.getInt("id"));
+                user.setUsername(rs.getString("username"));
+                user.setEmail(rs.getString("email"));
+                user.setMobileNumber(rs.getString("mobile_number"));
+                user.setRole(rs.getString("role"));
+
+                list.add(user);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return list;
+    }
+
 }
