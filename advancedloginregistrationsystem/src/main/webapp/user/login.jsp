@@ -1,37 +1,89 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Paynix - Login</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
+          rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" 
+          href="<%= request.getContextPath() %>/css/login.css">
 </head>
-<body>
 
-<h2>User Login</h2>
+<body class="login-body">
 
-<%
-    String error = (String) request.getAttribute("error");
-    if (error != null) {
-%>
-<p style="color:red;"><%= error %></p>
-<% } %>
+<div class="container-fluid vh-100 d-flex justify-content-center align-items-center">
+    <div class="row w-100 justify-content-center">
+        <div class="col-11 col-sm-8 col-md-6 col-lg-4">
 
-<form action="<%= request.getContextPath() %>/user/login" method="post">
-    Email:<br>
-    <input type="email" name="email" required><br><br>
+            <div class="card login-card shadow-lg">
+                <div class="card-body p-4">
 
-    Password:<br>
-    <input type="password" name="password" required><br><br>
+                    <h2 class="text-center mb-4 text-ocean">User Login</h2>
 
-    <button type="submit">Login</button>
-</form>
+                    <% 
+                        String error = (String) request.getAttribute("error");
+                        if (error != null) {
+                    %>
+                        <div class="alert alert-danger text-center" role="alert">
+                            <%= error %>
+                        </div>
+                    <% } %>
 
-<p>
-    <a href="<%= request.getContextPath() %>/user/forgotpassword.jsp">Forgot Password?</a>
-</p>
+                    <form action="<%= request.getContextPath() %>/user/login" method="post">
 
-<p>
-    New user?
-    <a href="<%= request.getContextPath() %>/user/register.jsp">Register here</a>
-</p>
+                        <div class="mb-3">
+                            <label class="form-label text-light">Email</label>
+                            <input type="email" 
+                                   class="form-control input-ocean" 
+                                   name="email" 
+                                   required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label text-light">Password</label>
+                            <input type="password" 
+                                   class="form-control input-ocean" 
+                                   name="password" 
+                                   required>
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" 
+                                    class="btn btn-ocean">
+                                Login
+                            </button>
+                        </div>
+                    </form>
+
+                    <div class="text-center mt-3">
+                        <a class="link-ocean"
+                           href="<%= request.getContextPath() %>/user/forgotpassword.jsp">
+                           Forgot Password?
+                        </a>
+                    </div>
+
+                    <div class="text-center mt-2 text-light">
+                        New user?
+                        <a class="link-ocean"
+                           href="<%= request.getContextPath() %>/user/register.jsp">
+                           Register here
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>

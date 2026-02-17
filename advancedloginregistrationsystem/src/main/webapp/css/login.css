@@ -1,0 +1,58 @@
+@charset "UTF-8";
+
+/* Full page black background */
+.login-body {
+    background-color: #000000;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Card Styling */
+.login-card {
+    background: linear-gradient(145deg, #012f34, #014d4e);
+    border-radius: 12px;
+    border: none;
+}
+
+/* Ocean Text */
+.text-ocean {
+    color: #00c3ff;
+}
+
+/* Ocean Button */
+.btn-ocean {
+    background: linear-gradient(90deg, #0077b6, #00b4d8);
+    color: white;
+    border: none;
+    transition: 0.3s ease-in-out;
+}
+
+.btn-ocean:hover {
+    background: linear-gradient(90deg, #00b4d8, #0077b6);
+    transform: scale(1.02);
+}
+
+/* Ocean Input */
+.input-ocean {
+    background-color: #021f22;
+    border: 1px solid #00b4d8;
+    color: white;
+}
+
+.input-ocean:focus {
+    border-color: #00c3ff;
+    box-shadow: 0 0 6px #00c3ff;
+    background-color: #022c30;
+    color: white;
+}
+
+/* Links */
+.link-ocean {
+    color: #00c3ff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.link-ocean:hover {
+    text-decoration: underline;
+    color: #48cae4;
+}

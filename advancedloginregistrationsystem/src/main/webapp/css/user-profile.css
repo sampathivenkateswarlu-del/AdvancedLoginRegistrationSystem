@@ -1,0 +1,111 @@
+@charset "UTF-8";
+
+/* Black background */
+.profile-body {
+    background-color: #000000;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Navbar */
+.profile-navbar {
+    background: linear-gradient(90deg, #000000, #111111);
+    border-bottom: 1px solid #00c3ff;
+}
+
+/* Rainbow brand animation */
+.text-rainbow {
+    font-weight: bold;
+    background: linear-gradient(
+        90deg,
+        #ff0000,
+        #ff9900,
+        #ffff00,
+        #00ff00,
+        #00ffff,
+        #0000ff,
+        #ff00ff
+    );
+    background-size: 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbowMove 6s linear infinite;
+}
+
+@keyframes rainbowMove {
+    0% { background-position: 0%; }
+    100% { background-position: 400%; }
+}
+
+/* Navbar links */
+.nav-ocean {
+    color: #00c3ff !important;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.nav-ocean:hover {
+    color: #48cae4 !important;
+    text-shadow: 0 0 6px #00c3ff;
+}
+
+.nav-danger {
+    color: #ff4d6d !important;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.nav-danger:hover {
+    color: #ff0000 !important;
+    text-shadow: 0 0 6px #ff4d6d;
+}
+
+/* Card */
+.profile-card {
+    background: linear-gradient(145deg, #012f34, #014d4e);
+    border-radius: 14px;
+    border: none;
+    transition: 0.3s ease;
+}
+
+.profile-card:hover {
+    transform: scale(1.02);
+}
+
+/* Heading */
+.text-ocean {
+    color: #00c3ff;
+}
+
+/* Editable input */
+.input-ocean {
+    background-color: #021f22;
+    border: 1px solid #00b4d8;
+    color: white;
+}
+
+.input-ocean:focus {
+    border-color: #00c3ff;
+    box-shadow: 0 0 8px #00c3ff;
+    background-color: #022c30;
+    color: white;
+}
+
+/* Disabled input */
+.input-disabled {
+    background-color: #111;
+    border: 1px solid #333;
+    color: #aaa;
+}
+
+/* Button */
+.btn-ocean {
+    background: linear-gradient(90deg, #0077b6, #00b4d8);
+    color: white;
+    border: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-ocean:hover {
+    background: linear-gradient(90deg, #00b4d8, #0077b6);
+    transform: scale(1.03);
+}

@@ -1,0 +1,87 @@
+@charset "UTF-8";
+
+/* Black background */
+.dashboard-body {
+    background-color: #000000;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Navbar */
+.dashboard-navbar {
+    background: linear-gradient(90deg, #000000, #111111);
+    border-bottom: 1px solid #00c3ff;
+}
+
+/* Rainbow animated brand text */
+.text-rainbow {
+    font-weight: bold;
+    background: linear-gradient(
+        90deg,
+        #ff0000,
+        #ff9900,
+        #ffff00,
+        #00ff00,
+        #00ffff,
+        #0000ff,
+        #ff00ff
+    );
+    background-size: 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbowFlow 6s linear infinite;
+}
+
+@keyframes rainbowFlow {
+    0% { background-position: 0%; }
+    100% { background-position: 400%; }
+}
+
+/* Navbar links */
+.nav-ocean {
+    color: #00c3ff !important;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.nav-ocean:hover {
+    color: #48cae4 !important;
+    text-shadow: 0 0 6px #00c3ff;
+}
+
+.nav-danger {
+    color: #ff4d6d !important;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.nav-danger:hover {
+    color: #ff0000 !important;
+    text-shadow: 0 0 6px #ff4d6d;
+}
+
+/* Card */
+.dashboard-card {
+    background: linear-gradient(145deg, #012f34, #014d4e);
+    border-radius: 14px;
+    border: none;
+}
+
+/* Welcome text */
+.welcome-text {
+    color: #00c3ff;
+}
+
+/* Info box */
+.info-box {
+    background-color: #021f22;
+    padding: 20px;
+    border-radius: 10px;
+    color: #ffffff;
+    border: 1px solid #00b4d8;
+}
+
+/* Smooth hover effect */
+.dashboard-card:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease;
+}
